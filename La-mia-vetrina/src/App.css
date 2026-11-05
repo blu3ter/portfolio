@@ -1,1 +1,57 @@
-/* Stili gestiti tramite Tailwind (vedi index.html) */
+/* ==========================================================================
+   Breakpoints e Regole Responsive per Dispositivi Mobile
+   ========================================================================== */
+
+/* Prevenzione globale di overflow orizzontale su viewport mobile */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* 
+ * Regole per schermi Mobile:
+ * Quando la larghezza dello schermo è al massimo 640px (max-width: 640px),
+ * applichiamo stili dedicati per pulsanti e contenitori dei progetti.
+ */
+@media (max-width: 640px) {
+  /* Header: pulsanti compatti con dimensioni minime e massime controllate */
+  .header-btn {
+    padding: 0.375rem 0.625rem !important;
+    font-size: 0.75rem !important;
+    white-space: nowrap !important;
+    max-width: 100%;
+  }
+
+  /* Footer delle card di progetto: abilita il wrap per evitare che le scritte escano */
+  .project-footer {
+    flex-wrap: wrap !important;
+    row-gap: 0.5rem !important;
+    column-gap: 0.75rem !important;
+  }
+
+  /* Link e badge nei progetti (es. repo FriParty, Google Play, BugBoard) */
+  .project-link-item {
+    font-size: 0.75rem !important;
+    max-width: 100%;
+    word-break: break-word;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Pulsanti generici su mobile per evitare testo che esce dai bordi */
+  .btn-responsive {
+    white-space: nowrap !important;
+    min-width: fit-content;
+    max-width: 100%;
+  }
+}
+
+/* Regole per schermi molto piccoli (es. iPhone SE o schermi stretti <= 375px) */
+@media (max-width: 375px) {
+  .header-btn {
+    padding: 0.35rem 0.5rem !important;
+    font-size: 0.7rem !important;
+    gap: 0.25rem !important;
+  }
+}
